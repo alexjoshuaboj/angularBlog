@@ -1,46 +1,23 @@
 <div class="container">
-    <div class="row col-md-12 mt-5 mb-3">
-        <h2>Resolver un acertijo, la clave para trabajar con Elon Musk</h2>
-        <div class="contenidoPost">
-            <div class="image">
-                <img
-                    src="https://www.estrategiaynegocios.net/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=_$dLAt$z1xhX2O$iGEggXs$daE2N3K4ZzOUsqbU5sYvt6S$L6Ysaf9HlhFDfxYC46FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg">
-            </div>
-            <div class="text">
-                <p class="cat">Category: Tech</p>
-                <p class="txt"> Elon Musk se ha convertido en uno de los grandes gurús del mundo empresarial. El
-                    fundador de Tesla y SpaceX no deja indiferente a nadie cada vez que abre la boca: ya sea por su
-                    estrambótica idea de que el ser humano se mude a Marte o por darle unas caladas a un porro de
-                    marihuana y beber unos tragos de whisky durante una entrevista en directo. Pese a estas salidas de
-                    tono, sigue teniendo alma de magnate y, como tal, se preocupa por sus intereses económicos antes que
-                    por cualquier otro aspecto.
-
-                    Delirio o genialidad, una de sus últimas recomendaciones fue que los jóvenes se centraran en
-                    aprender a "programar software de inteligencia artificial", pues a su juicio será el único trabajo
-                    que tenga sentido dentro de unos años. No es la única tabla de salvación que vislumbra, también
-                    apuesta por potenciar las relaciones personales, en referencia a herramientas como las redes
-                    sociales: “Si estás trabajando en algo que involucra personas o ingeniería, probablemente sea una
-                    buena idea”. </p>
-                <div class="footerPost">
-                    <small>Alex Joshua</small>
-                    <button class="btn btn-dark ml-5 mb-1" (click)="onClick()">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <select class="custom-select mr-4" (change)="onChange($event)" [routerLink]="['blog']">
+        <option selected>Category filter</option>
+        <option value="AllPosts">All Posts</option>
+        <option value="Programming">Programming</option>
+        <option value="Tech">Tech</option>
+        <option value="Machine_learning">Machine Learning</option>
+    </select>
     <div class="row col-md-12 mt-5 mb-3" *ngFor="let post of arrPosts">
         <h2>{{ post.title }}</h2>
         <div class="contenidoPost">
             <div class="image">
                 <img src="{{ post.image }}">
             </div>
-            <p class="txt">{{ post.text }}</p>
             <div class="text">
                 <p class="cat">Category: {{ post.category }}</p>
-                <p class="txt">{{ post.text }}</p>
+                <p class="txt">{{ post.textArea }}</p>
                 <div class="footerPost">
                     <small>{{ post.author }}</small>
-                    <button class="btn btn-dark ml-5 mb-1" (click)="onClick()">Delete</button>
+                    <button class="btn btn-dark ml-5 mb-1" (click)="onClick(post)">Delete</button>
                 </div>
             </div>
         </div>

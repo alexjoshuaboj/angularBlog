@@ -17,9 +17,18 @@ export class BlogComponent implements OnInit {
     this.arrPosts = await this.formularioService.getPosts();
   }
 
-  async onClick(posts: Post) {
-    await this.formularioService.getDelete(posts);
+  onClick(Page: Post) {
+    this.formularioService.getDelete(Page);
   }
+
+  async onChange($event) {
+    if ($event.target.value === 'AllPosts') {
+      this.arrPosts = await this.formularioService.getPosts()
+    } else {
+      this.arrPosts = await this.formularioService.getPostCategorys($event.target.value);
+    }
+  }
+
 
 
 

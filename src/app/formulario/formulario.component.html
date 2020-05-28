@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
+    <form novalidate [formGroup]="formulario">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Author</span>
@@ -13,10 +13,10 @@
                 <label class="input-group-text" for="category">Category</label>
             </div>
             <select class="custom-select" id="category" formControlName="category">
-                <option selected>Choose...</option>
-                <option value="programming">Programming</option>
-                <option value="tech">Tech</option>
-                <option value="machine_learning">Machine Learning</option>
+                <option selected>Category</option>
+                <option value="Programming">Programming</option>
+                <option value="Tech">Tech</option>
+                <option value="Machine_learning">Machine Learning</option>
             </select>
         </div>
 

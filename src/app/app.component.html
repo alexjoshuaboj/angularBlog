@@ -4,16 +4,6 @@
     <button class="btn btn-dark mb-1" [routerLink]="['formulario']">New Post</button>
     <button class="btn btn-dark ml-2 mb-1" [routerLink]="['blog']">Blog</button>
   </div>
-  <!-- <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form> -->
-  <select class="custom-select mr-4" (change)="onChange($event)" [routerLink]="['blog']">
-    <option selected>Category filter</option>
-    <option value="programming">Programming</option>
-    <option value="tech">Tech</option>
-    <option value="machine_learning">Machine Learning</option>
-  </select>
 </nav>
 <div class="container">
   <router-outlet></router-outlet>

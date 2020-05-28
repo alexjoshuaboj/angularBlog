@@ -40,10 +40,6 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log(this.formulario.value)
-  }
-
   onClick() {
     this.formularioService.getAddPost(this.formulario.value);
   }

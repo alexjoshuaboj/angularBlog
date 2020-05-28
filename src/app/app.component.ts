@@ -11,11 +11,8 @@ export class AppComponent {
 
   arrPosts: Post[];
 
-  constructor(private formularioService: FormularioService) {
+  constructor() {
   }
 
-  async onChange($event) {
-    await this.formularioService.getPostCategory($event.target.value);
-  }
 
 }
