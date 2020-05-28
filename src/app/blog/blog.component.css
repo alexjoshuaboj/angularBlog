@@ -1,0 +1,12 @@
+.row img{
+    max-width: 100%;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+
+.footerPost{
+    display: flex;
+    justify-content: space-between;
+}

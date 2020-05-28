@@ -1,0 +1,57 @@
+<div class="container mt-4">
+    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Author</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1" formControlName="author">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="category">Category</label>
+            </div>
+            <select class="custom-select" id="category" formControlName="category">
+                <option selected>Choose...</option>
+                <option value="programming">Programming</option>
+                <option value="tech">Tech</option>
+                <option value="machine_learning">Machine Learning</option>
+            </select>
+        </div>
+
+        <label for="basic-url">Insert image URL</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">https://example.com/asf1f123412rff.jpg</span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                formControlName="image">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">max: 1028 x 720</span>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Title</span>
+            </div>
+            <input type="text" class="form-control" formControlName="title">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Date</span>
+            </div>
+            <input type="text" class="input-group-text" formControlName="date">
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Text</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" formControlName="textArea"></textarea>
+        </div>
+    </form>
+    <button class="btn btn-dark mt-4" (click)="onClick()" [disabled]="!formulario.valid">Send new Post</button>
+</div>

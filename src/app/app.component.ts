@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormularioService } from './formulario.service';
+import { Post } from './models/posts.bbdd';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ProyectoBlog';
+
+  arrPosts: Post[];
+
+  constructor(private formularioService: FormularioService) {
+  }
+
+  async onChange($event) {
+    await this.formularioService.getPostCategory($event.target.value);
+  }
+
 }
